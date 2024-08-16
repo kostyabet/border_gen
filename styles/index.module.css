@@ -1,0 +1,170 @@
+@font-face {
+    font-family: "DIN Pro Medium";
+    src: url("./../fonts/DIN_Pro_Medium.otf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "DIN Pro Bold";
+    src: url("./../fonts/DIN_Pro_Bold_700.otf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+.container .settings{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px 25px;
+}
+
+.container input[type=range] {
+    width: 100%;
+    cursor: pointer;
+}
+
+.container input[type=color] {
+    width: 50px;
+    height: 25px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.container input[type="text"] {
+    width: 55px;
+    height: 25px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.container select {
+    width: 100%;
+    height: 25px;
+    border-radius: 5px;
+    border: 1px solid #0b255e;
+    cursor: pointer;
+    font-family: "DIN Pro Medium", sans-serif;
+
+    outline: none; /* Убираем контур при фокусе */
+}
+
+.container option {
+     background-color: #66b7ed;
+     
+}
+
+.container label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+}
+
+.container {
+    background-color: #4eaded;
+    padding: 30px;
+    width: 50vmin;
+    border-radius: 25px;
+    box-shadow:
+        -24px -24px 37px 1px rgba(128, 199, 249, 0.60),
+        24px 23px 37px 1px rgba(68, 81, 90, 0.15);
+}
+
+.MainContainer {
+    background-color: #4eaded;
+    padding: 40px;
+    width: 110vmin;
+    border-radius: 25px;
+    box-shadow:
+            -24px -24px 37px 1px rgba(128, 199, 249, 0.60),
+            24px 23px 37px 1px rgba(68, 81, 90, 0.15);
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+
+.title {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.title h1{
+    font-size: 24px;
+    font-family: "DIN Pro Bold", sans-serif;
+}
+
+.title h3 {
+    font-size: 16px;
+    font-family: "DIN Pro Medium", sans-serif;
+}
+
+.body {
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.range {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    white-space: nowrap;
+    gap: 10px;
+}
+
+.container label {
+    font-family: "DIN Pro Medium", sans-serif;
+    cursor: unset;
+}
+
+.color {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    white-space: nowrap;
+    gap: 5px;
+}
+
+.codeBlock {
+    border-radius: 5px;
+    width: 100%;
+    background-color: black;
+    font-family: "DIN Pro Medium", sans-serif;
+}
+
+.codeBlock button {
+    margin: 5px;
+    
+    margin-left: 31.1%;
+    margin-top: 5.38%;
+    
+    width: 5%;
+    height: 25px;
+    border-radius: 5px;
+    border: 1px solid darkgreen;
+    background-color: darkgreen;
+    color: #DDDDDD;
+    cursor: pointer;
+    font-family: "DIN Pro Medium", sans-serif;
+    position: absolute;
+    
+    font-size: 12px;
+}
+
+.codeBlock pre {
+    color: white;
+    font-family: "Cascadia Mono", sans-serif;
+    padding: 15px;
+    font-size: 12px;
+}
+
+.result {
+    width: 50%;
+    margin-right: 5%;
+}
