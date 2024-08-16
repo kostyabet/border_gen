@@ -21,6 +21,43 @@
 .container input[type=range] {
     width: 100%;
     cursor: pointer;
+    
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.container input[type=range]::-webkit-slider-runnable-track { 
+    border-radius: 5px/100%; 
+    height: 6px;   
+    margin-top: 3px;
+    border: 1px solid #001f3f; 
+    background-color: #001f3f; 
+}
+
+.container input[type=range]::-webkit-slider-thumb { 
+    background: #001f3f; 
+    border: 1px solid black; 
+    border-radius: 13px/100%; 
+    cursor: pointer; 
+    width: 13px;
+    height: 13px; 
+    -webkit-appearance: none; 
+    margin-top: -4px; 
+}
+
+.container input[type=range]::-moz-range-track {  
+    border-radius: 10px/100%; 
+    height: 5px; 
+    border: 1px solid #001f3f; 
+    background-color: #001f3f; 
+}
+
+.container input[type=range]::-moz-range-thumb {  
+    background: #001f3f;  
+    border: 1px solid #001f3f; 
+    border-radius: 10px/100%;  
+    cursor: pointer; 
 }
 
 .container input[type=color] {
@@ -51,8 +88,7 @@
 }
 
 .container option {
-     background-color: #66b7ed;
-     
+     background-color: #4a91d3;
 }
 
 .container label {
@@ -63,23 +99,23 @@
 }
 
 .container {
-    background-color: #4eaded;
+    background-color: #4a91d3;
     padding: 30px;
-    width: 50vmin;
+    width: 60vmin;
     border-radius: 25px;
-    box-shadow:
-        -24px -24px 37px 1px rgba(128, 199, 249, 0.60),
-        24px 23px 37px 1px rgba(68, 81, 90, 0.15);
+    box-shadow: 
+        20px 20px 60px #3f7bb3,
+        -20px -20px 60px #55a7f3;
 }
 
 .MainContainer {
-    background-color: #4eaded;
-    padding: 40px;
-    width: 110vmin;
+    background-color: #4a91d3;
+    padding: 20px;
+    width: 130vmin;
     border-radius: 25px;
     box-shadow:
-            -24px -24px 37px 1px rgba(128, 199, 249, 0.60),
-            24px 23px 37px 1px rgba(68, 81, 90, 0.15);
+        20px 20px 60px #3f7bb3,
+        -20px -20px 60px #55a7f3;
     position: absolute;
     transform: translate(-50%, -50%);
     top: 50%;
@@ -97,6 +133,7 @@
 }
 
 .title h3 {
+    padding-top: 5px;
     font-size: 16px;
     font-family: "DIN Pro Medium", sans-serif;
 }
@@ -118,7 +155,7 @@
 }
 
 .container label {
-    font-family: "DIN Pro Medium", sans-serif;
+    font-family: "DIN Pro Bold", sans-serif;
     cursor: unset;
 }
 
@@ -134,37 +171,71 @@
 .codeBlock {
     border-radius: 5px;
     width: 100%;
-    background-color: black;
+    background-color: #1d1f21;
     font-family: "DIN Pro Medium", sans-serif;
 }
 
 .codeBlock button {
-    margin: 5px;
-    
-    margin-left: 31.1%;
-    margin-top: 5.38%;
-    
+    margin-top: 5px;
+    margin-left: 31.7%;
+    position: absolute;
     width: 5%;
+    padding: 3px;
     height: 25px;
     border-radius: 5px;
-    border: 1px solid darkgreen;
-    background-color: darkgreen;
-    color: #DDDDDD;
+    border: 1px solid #3b843c;
+    background-color: #3b843c;
+    color: #FFFFFF;
     cursor: pointer;
     font-family: "DIN Pro Medium", sans-serif;
-    position: absolute;
-    
     font-size: 12px;
 }
 
 .codeBlock pre {
-    color: white;
+    color: #FFFFFF;
     font-family: "Cascadia Mono", sans-serif;
     padding: 15px;
-    font-size: 12px;
+    font-size: 10px;
 }
 
 .result {
     width: 50%;
     margin-right: 5%;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.watermark {
+    font-family: "DIN Pro Bold", sans-serif;
+    font-size: 12px;
+    text-align: right;
+    width: 100%;
+}
+
+.watermark a {
+    border-radius: 3px;
+    background-color: black;
+    color: #c5c8c6;
+    padding: 3px;
+    
+    font-family: 'DIN Pro Medium', sans-serif;
+}
+
+.socials {
+    font-family: "DIN Pro Bold", sans-serif;
+    font-size: 12px;
+    width: 100%;
+}
+
+.socials a {
+    border-radius: 3px;
+    background-color: black;
+    color: #c5c8c6;
+    padding: 3px;
+
+    font-family: 'DIN Pro Medium', sans-serif;  
 }

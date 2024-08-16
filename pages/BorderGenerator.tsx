@@ -1,13 +1,11 @@
 import styles from "@/styles/index.module.css";
 import React from "react";
-import {number} from "prop-types";
-import css from "styled-jsx/css";
 
 const BorderGenerator = () => {
     const [borderWidth, setBorderWidth] = React.useState(3);
     const [style, setStyle] = React.useState('solid');
-    const [position, setPosition] = React.useState('all');
-    const [borderColor, setBorderColor] = React.useState('#0b255e');
+    const [position, setPosition] = React.useState('bottom');
+    const [borderColor, setBorderColor] = React.useState('#001f3f');
     const [borderOpacity, setBorderOpacity] = React.useState("0.5");
     const [borderRadius, setBorderRadius] = React.useState(20);
     const [width, setWidth] = React.useState(200);
@@ -46,8 +44,8 @@ const BorderGenerator = () => {
     return(
         <div className={styles.MainContainer}>
             <div className={styles.title}>
-                <h1>Border Picker</h1>
-                <h3>Generate Border CSS code</h3>
+                <h1>Border Generator</h1>
+                <h3>Generate <span style={{fontWeight: 'bold'}}>Soft</span>-UI Border CSS code</h3>
             </div>
             <div className={styles.body}>
                 <div className={styles.result}>
@@ -64,9 +62,7 @@ const BorderGenerator = () => {
                         borderLeft: position == 'left' || position == 'all' ? borderStyle : undefined,
                         borderRight: position == 'right' || position == 'all' ? borderStyle : undefined,
                         borderBottom: position == 'bottom' || position == 'all' ? borderStyle : undefined,
-                    }}>
-
-                    </div>
+                    }}/>
                 </div>
                 <div className={styles.container}>
                     <div className={styles.settings}>
@@ -114,7 +110,6 @@ const BorderGenerator = () => {
                                    onChange={(e) => setBorderRadius(Number(e.target.value))}
                             />
                         </div>
-                        <label style={{marginTop: 10}}>Other options</label>
                         <div className={styles.range}>
                             <label>Width:</label>
                             <input type="range" min="100" max="300" value={width}
@@ -125,25 +120,26 @@ const BorderGenerator = () => {
                                    onChange={(e) => setHeight(Number(e.target.value))}
                             />
                         </div>
-
                         <div className={styles.codeBlock}>
                             <button id={'button'} onClick={OnButtonClick}>Copy</button>
                             <pre>
-                                <span style={{color: '#6fa2f2'}}>{borderName}</span><span style={{color: '#ccd5e3'}}>: {borderStyle};</span><br/>
-                                <span style={{color: '#6fa2f2'}}>border-radius</span><span style={{color: '#ccd5e3'}}>: {borderRadius}px;</span><br/>
                                 <span style={{color: '#6fa2f2'}}>width</span><span style={{color: '#ccd5e3'}}>: {width}px;</span><br/>
                                 <span style={{color: '#6fa2f2'}}>height</span><span style={{color: '#ccd5e3'}}>: {height}px;</span><br/>
+                                <span style={{color: '#6fa2f2'}}>border-radius</span><span style={{color: '#ccd5e3'}}>: {borderRadius}px;</span><br/>
+                                <span style={{color: '#6fa2f2'}}>{borderName}</span><span style={{color: '#ccd5e3'}}>: {borderStyle};</span><br/>
                             </pre>
                         </div>
                     </div>
                 </div>
             </div>
-            <div>
-                
-            </div>
-            <div>
-                
-            </div>
+            <footer className={styles.footer}>
+                <div className={styles.socials}>
+                    Made by <a href={"https://github.com/kostyabet"}>Konstantsin Betenya</a>
+                </div>
+                <div className={styles.watermark}>
+                    Read more about <a href={"https://github.com/kostyabet/border_gen"}>Border Generator</a>
+                </div>
+            </footer>
         </div>
     )
 }
