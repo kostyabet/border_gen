@@ -155,7 +155,7 @@ const BorderGenerator = () => {
             </div>
             <footer className={styles.footer}>
                 <div className={styles.faq}>
-                    <label>?</label>
+                    <a href={"https://github.com/kostyabet/border_gen"}><label>?</label></a>
                 </div>
                 <div className={styles.socials}>
                     <span>Put  <a href={"https://github.com/kostyabet/border_gen"}>star</a> if you liked it please.</span>
