@@ -61,7 +61,7 @@
 }
 
 .container input[type=color] {
-    width: 50px;
+    width: 100%;
     height: 25px;
     border: 1px solid #ccc;
     cursor: pointer;
@@ -177,9 +177,9 @@
 
 .codeBlock button {
     margin-top: 5px;
-    margin-left: 31.7%;
+    margin-left: 30.7%;
     position: absolute;
-    width: 5%;
+    width: 6%;
     padding: 3px;
     height: 25px;
     border-radius: 5px;
@@ -189,6 +189,13 @@
     cursor: pointer;
     font-family: "DIN Pro Medium", sans-serif;
     font-size: 12px;
+
+    text-shadow: #4a91d3 0 0 0;
+    transition: text-shadow .2s ease-in-out;
+}
+
+.codeBlock button:hover {
+    text-shadow: white 0 0 3px;
 }
 
 .codeBlock pre {
@@ -200,6 +207,7 @@
 
 .result {
     width: 50%;
+    height: 100%;
     margin-right: 5%;
 }
 
@@ -209,33 +217,61 @@
     justify-content: flex-start;
 }
 
-.watermark {
-    font-family: "DIN Pro Bold", sans-serif;
-    font-size: 12px;
-    text-align: right;
-    width: 100%;
+.faq {
+    text-align: left;
+    font-family: 'DIN Pro Bold', sans-serif;
+    background-color: #1d1f21;
+    color: #c1bcbc;
+    border: 1px solid #001f3f;
+    transition:
+            background-color .3s ease-in-out,
+            color .15s ease-in-out;
+    border-radius: 50px;
 }
 
-.watermark a {
-    border-radius: 3px;
-    background-color: black;
-    color: #c5c8c6;
-    padding: 3px;
-    
-    font-family: 'DIN Pro Medium', sans-serif;
+.faq label {
+    cursor: pointer;
+    font-size: 14px;
+    padding: 7px;
+}
+
+.faq:hover {
+    color: #001f3f;
+    background-color: transparent;
 }
 
 .socials {
     font-family: "DIN Pro Bold", sans-serif;
     font-size: 12px;
     width: 100%;
+    text-align: right;
 }
 
 .socials a {
     border-radius: 3px;
-    background-color: black;
+    background-color: #1d1f21;
     color: #c5c8c6;
     padding: 3px;
+    font-family: 'DIN Pro Medium', sans-serif;
 
-    font-family: 'DIN Pro Medium', sans-serif;  
+    transition: 
+        color .3s ease-in-out,
+        background-color .3s ease-in-out;
+}
+
+.socials a:hover {
+    color: #001f3f;
+}
+.socials a:hover {
+    background-color: transparent;
+}
+
+.resBlock {
+    outline-width: 0;
+    transition:
+        outline-width .1s ease-in-out;
+}
+
+.resBlock:hover {
+    outline-width: 20px;
 }

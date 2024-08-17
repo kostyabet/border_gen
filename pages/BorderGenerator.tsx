@@ -2,14 +2,20 @@ import styles from "@/styles/index.module.css";
 import React from "react";
 
 const BorderGenerator = () => {
+    const maxHeight = 300;
+    const maxWidth = 300;
+    
     const [borderWidth, setBorderWidth] = React.useState(3);
     const [style, setStyle] = React.useState('solid');
-    const [position, setPosition] = React.useState('bottom');
+    const [position, setPosition] = React.useState('all');
     const [borderColor, setBorderColor] = React.useState('#001f3f');
     const [borderOpacity, setBorderOpacity] = React.useState("0.5");
     const [borderRadius, setBorderRadius] = React.useState(20);
     const [width, setWidth] = React.useState(200);
     const [height, setHeight] = React.useState(200);
+    
+    const [backgroundColor, setBackgroundColor] = React.useState('#66b7ed');
+    const [layoutColor, setLayoutColor] = React.useState('#66b7ed');
     
     const borderName = `border${getPosition(position)}`;
     const borderStyle = `${borderWidth}px ${style} ${hexToRgba(borderColor, borderOpacity)}`;
@@ -33,12 +39,13 @@ const BorderGenerator = () => {
         await navigator.clipboard.writeText(`${borderName}: ${borderStyle};` + `\n` + 
                                                  `border-radius: ${borderRadius}px;` + `\n` +
                                                  `width: ${width}px;` + `\n` +
-                                                 `height: ${height}px;` + `\n`);
+                                                 `height: ${height}px;` + `\n` +
+                                                 `background-color: ${backgroundColor};`);
         const button = document.getElementById('button') as HTMLInputElement;
         button.innerText = 'Copied!';
         setTimeout(() => {
             button.innerText = "Copy";
-        }, 1000);
+        }, 1200);
     }
     
     return(
@@ -49,19 +56,21 @@ const BorderGenerator = () => {
             </div>
             <div className={styles.body}>
                 <div className={styles.result}>
-                    <div style={{
+                    <div className={styles.resBlock} style={{
                         display: 'flex',
                         justifyContent: 'center',
                         width: `${width}px`,
                         height: `${height}px`,
-                        position: 'relative',
                         margin: 'auto',
-                        backgroundColor: '#66b7ed',
+                        position: 'relative',
+                        backgroundColor: backgroundColor,
                         borderRadius: borderRadius,
                         borderTop: position == 'top' || position == 'all' ? borderStyle : undefined,
                         borderLeft: position == 'left' || position == 'all' ? borderStyle : undefined,
                         borderRight: position == 'right' || position == 'all' ? borderStyle : undefined,
                         borderBottom: position == 'bottom' || position == 'all' ? borderStyle : undefined,
+                        outlineStyle: 'solid',
+                        outlineColor: layoutColor 
                     }}/>
                 </div>
                 <div className={styles.container}>
@@ -96,7 +105,7 @@ const BorderGenerator = () => {
                         </div>
                         <div className={styles.color}>
                             <label>Border Color:</label>
-                            <input type="color" value={borderColor}
+                            <input type="color" value={borderColor} style={{width: '20%'}}
                                    onChange={(e) => setBorderColor(e.target.value)}
                             />
                             <label>Opacity:</label>
@@ -110,14 +119,25 @@ const BorderGenerator = () => {
                                    onChange={(e) => setBorderRadius(Number(e.target.value))}
                             />
                         </div>
+                        <label style={{marginTop: '10px'}}>Another functional</label>
                         <div className={styles.range}>
                             <label>Width:</label>
-                            <input type="range" min="100" max="300" value={width}
+                            <input type="range" min="100" max={maxWidth} value={width}
                                    onChange={(e) => setWidth(Number(e.target.value))}
                             />
                             <label>Height:</label>
-                            <input type="range" min="100" max="300" value={height}
+                            <input type="range" min="100" max={maxHeight} value={height}
                                    onChange={(e) => setHeight(Number(e.target.value))}
+                            />
+                        </div>
+                        <div className={styles.color}>
+                            <label>Background Color:</label>
+                            <input type="color" value={backgroundColor}
+                                   onChange={(e) => setBackgroundColor(e.target.value)}
+                            />
+                            <label>Layout Color:</label>
+                            <input type="color" value={layoutColor}
+                                   onChange={(e) => setLayoutColor(e.target.value)}
                             />
                         </div>
                         <div className={styles.codeBlock}>
@@ -127,17 +147,18 @@ const BorderGenerator = () => {
                                 <span style={{color: '#6fa2f2'}}>height</span><span style={{color: '#ccd5e3'}}>: {height}px;</span><br/>
                                 <span style={{color: '#6fa2f2'}}>border-radius</span><span style={{color: '#ccd5e3'}}>: {borderRadius}px;</span><br/>
                                 <span style={{color: '#6fa2f2'}}>{borderName}</span><span style={{color: '#ccd5e3'}}>: {borderStyle};</span><br/>
+                                <span style={{color: '#6fa2f2'}}>background-color</span><span style={{color: '#ccd5e3'}}>: {backgroundColor};</span><br/>
                             </pre>
                         </div>
                     </div>
                 </div>
             </div>
             <footer className={styles.footer}>
-                <div className={styles.socials}>
-                    Made by <a href={"https://github.com/kostyabet"}>Konstantsin Betenya</a>
+                <div className={styles.faq}>
+                    <label>?</label>
                 </div>
-                <div className={styles.watermark}>
-                    Read more about <a href={"https://github.com/kostyabet/border_gen"}>Border Generator</a>
+                <div className={styles.socials}>
+                    <span>Put  <a href={"https://github.com/kostyabet/border_gen"}>star</a> if you liked it please.</span>
                 </div>
             </footer>
         </div>
